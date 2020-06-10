@@ -1,0 +1,19 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: bing-config
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/
+  profiles:
+    active: native # 当配置文件从本地读取时，此处需要配置native
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/

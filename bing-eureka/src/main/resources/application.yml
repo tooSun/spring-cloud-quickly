@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: bing-eureka
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname: localhost
+  client:
+    register-with-eureka: false # 注册中心不需要向自己注册
+    fetch-registry: false # 注册中心不需要拉取注册信息
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
