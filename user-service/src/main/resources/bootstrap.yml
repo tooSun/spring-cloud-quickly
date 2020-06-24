@@ -1,5 +1,3 @@
-server:
-  port: 8082
 spring:
   application:
     name: user-service
@@ -8,8 +6,12 @@ spring:
       enabled: true
     config:
       discovery:
-        service-id: bing-config
+        service-id: bing-config # 配置服务器ID
         enabled: true
+      name: user
+    loadbalancer:
+      ribbon:
+        enabled: false # 关闭ribbon
 eureka:
   instance:
     appname: ${spring.application.name}
@@ -18,4 +20,3 @@ eureka:
     service-url:
       defaultZone: http://localhost:8081/eureka/
     enabled: true
-

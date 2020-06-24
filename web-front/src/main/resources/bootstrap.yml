@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: web-front
+  cloud:
+    discovery:
+      enabled: true
+    config:
+      discovery:
+        service-id: bing-config # 配置服务器ID
+        enabled: true
+      name: front
+    loadbalancer:
+      ribbon:
+        enabled: false # 关闭ribbon
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+    enabled: true
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true

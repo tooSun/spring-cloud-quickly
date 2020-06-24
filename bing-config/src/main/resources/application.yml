@@ -7,7 +7,7 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/
+          search-locations: classpath:/,classpath:/user/,classpath:/front/
   profiles:
     active: native # 当配置文件从本地读取时，此处需要配置native
 eureka:

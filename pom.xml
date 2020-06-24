@@ -20,6 +20,7 @@
 		<module>pay-service</module>
 		<module>order-service</module>
 		<module>user-service</module>
+		<module>bing-common</module>
 	</modules>
 
 	<groupId>com.bing</groupId>
@@ -38,7 +39,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -55,6 +59,21 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<groupId>com.bing</groupId>
+				<artifactId>bing-core</artifactId>
+				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.bing</groupId>
+				<artifactId>bing-common</artifactId>
+				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.2.68</version>
+			</dependency>
+			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
@@ -67,8 +86,12 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
