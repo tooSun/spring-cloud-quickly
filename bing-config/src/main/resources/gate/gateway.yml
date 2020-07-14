@@ -1,0 +1,13 @@
+server:
+  port: 8082
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: web-front
+          uri: lb://web-front
+          predicates:
+            - Method=GET,POST
+    loadbalancer:
+      ribbon:
+        enabled: false

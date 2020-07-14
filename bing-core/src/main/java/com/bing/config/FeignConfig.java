@@ -1,6 +1,5 @@
 package com.bing.config;
 
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.bing.FeignNonBlockingLoadBalancerClient;
 import com.bing.NonBlockingLoadBalancerClient;
 import feign.Client;

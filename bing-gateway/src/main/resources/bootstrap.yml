@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: bing-gateway
+  cloud:
+    discovery:
+      enabled: true
+    config:
+      discovery:
+        service-id: bing-config # 配置服务器ID
+        enabled: true
+      name: gateway
+    loadbalancer:
+      ribbon:
+        enabled: false # 关闭ribbon
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+    enabled: true
